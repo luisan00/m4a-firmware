@@ -4,10 +4,8 @@
 # RIOT folder
 RIOT
 # some doc folders
-doc/_build
-doc/api
-doc/doxyoutput
-doc/doxygen/html
+docs/doxygen/gen_docs
+docs/sphinx/source/api
 # build folders
 build/
 bin/
