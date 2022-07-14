@@ -30,7 +30,7 @@ install-boot:
 update:
 	- FEATURES_REQUIRED=riotboot USEMODULE=usbus_dfu $(MAKE_CMD) M4ABOOT=1 -C firmware all riotboot/flash-slot0
 docs:
-	cd doc/doxygen && make
+	@echo + cd docs && make html
 
 -include makefiles/tools/m4agen.inc.mk
 -include makefiles/tests.inc.mk
