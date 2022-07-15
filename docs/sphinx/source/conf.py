@@ -1,6 +1,12 @@
+#import sys
+import breathe.project
+project = 'Mesh4all'
+email = 'hello@mesh4all.org'
+copyright = '2022 Mesh4all %s'% email
 extensions = [
-    'breathe',
-    'exhale',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.viewcode',
+    'breathe'
 ]
 
 # -- Exhale configuration ---------------------------------------------------
@@ -10,19 +16,7 @@ breathe_projects = {
 }
 
 breathe_default_project = "Mesh4all"
-
-# Setup the exhale extension
-exhale_args = {
-    # These arguments are required
-    "containmentFolder":     "./api",
-    "rootFileName":          "library_root.rst",
-    "rootFileTitle":         "Mesh4all firmware docs",
-    "doxygenStripFromPath":  "..",
-    # Suggested optional arguments
-    "createTreeView":        True,
-    # TIP: if using the sphinx-bootstrap-theme, you need
-    # "treeViewIsBootstrap": True,
-}
+breathe_default_members = ('members', 'undoc-members')
 
 # Tell sphinx what the primary language being documented is.
 primary_domain = 'c'
@@ -38,5 +32,3 @@ source_suffix = {
 
 # use the following theme
 html_theme = "sphinx_book_theme"
-
-
