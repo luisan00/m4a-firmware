@@ -16,7 +16,6 @@ breathe_projects = {
 }
 
 breathe_default_project = "Mesh4all"
-breathe_default_members = ('members', 'undoc-members')
 
 # Tell sphinx what the primary language being documented is.
 primary_domain = 'c'
