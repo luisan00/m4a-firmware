@@ -18,22 +18,27 @@
  * @author  luisan00    <luisan00@hotmail.com>
  */
 
-#include "shell_extended.h"
-#include "kernel_defines.h"
+#include <stdio.h>
+#include <string.h>
+#include "uniqueid.h"
 
-#if IS_USED(MODULE_RADIO)
-int radio_usage(int argc, char **argv);
-#endif
-#if IS_USED(MODULE_UNIQUEID)
-int uid_cmd(int argc, char **argv);
-#endif
+void uid_usage(void) {
+    puts("Uniqueid Tool");
+    puts("Usage: uid [static|rand]");
+    puts("");
+}
 
-const shell_command_t shell_extended_commands[] = {
-#if IS_USED(MODULE_RADIO)
-    {"radio", "shown radio command help", radio_usage},
-#endif
-#if IS_USED(MODULE_UNIQUEID)
-    {"uid", "uniqueid commands", uid_cmd},
-#endif
-    {NULL, NULL, NULL},
-};
+int uid_cmd(int argc, char **argv) {
+    (void)argc;
+    (void)argv;
+    if ((argc < 2) || (argc > 2)|| (strcmp(argv[1], "help") == 0)) {
+        uid_usage();
+    } else {
+        if (strcmp(argv[1], "static") == 0) {
+            printf("get static address #ToDo\n");
+        } else if (strcmp(argv[1], "rand") == 0) {
+            printf("get random address #ToDo\n");
+        }
+    }
+    return 0;
+}
